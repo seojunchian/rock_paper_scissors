@@ -1,9 +1,22 @@
-const playerChoice = "rock"
 const computerChoice = getComputerChoice();
 
 function getComputerChoice() {
-
+    const rps = [
+        "rock",
+        "paper",
+        "scissors"
+      ];
+    const randomItem = rps[Math.floor(Math.random()*rps.length)];
+    return randomItem;
 }
-function play(computerChoice, playerChoice) {
-    
+function play() {
+    if (computerChoice == "scissors") {
+        console.log("win");
+    } else if (computerChoice == "paper") {
+        console.log("lose");
+    }
+    else {
+        console.log("tie");
+    }
 }
+play();
