@@ -1,3 +1,4 @@
+const choice = document.querySelector("#choice");
 const computerChoice = getComputerChoice();
 
 function getComputerChoice() {
@@ -7,8 +8,10 @@ function getComputerChoice() {
         "scissors"
       ];
     const randomItem = rps[Math.floor(Math.random()*rps.length)];
+    choice.textContent = randomItem;
     return randomItem;
 }
+
 function play() {
     if (computerChoice == "scissors") {
         console.log("win");
@@ -19,4 +22,5 @@ function play() {
         console.log("tie");
     }
 }
+
 play();
