@@ -1,4 +1,8 @@
-const choice = document.querySelector("#choice");
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+const paragraph = document.querySelector("#paragraph");
+
 const computerChoice = getComputerChoice();
 
 function getComputerChoice() {
@@ -8,19 +12,35 @@ function getComputerChoice() {
         "scissors"
       ];
     const randomItem = rps[Math.floor(Math.random()*rps.length)];
-    choice.textContent = randomItem;
     return randomItem;
 }
 
-function play() {
-    if (computerChoice == "scissors") {
-        console.log("win");
-    } else if (computerChoice == "paper") {
-        console.log("lose");
+rock.addEventListener("click", () => {
+    if(computerChoice == "scissors") {
+        paragraph.textContent = "win";
+    } else if(computerChoice == "paper") {
+        paragraph.textContent = "lose";
+    } else {
+        paragraph.textContent = "tie";
     }
-    else {
-        console.log("tie");
-    }
-}
+})
 
-play();
+paper.addEventListener("click", () => {
+    if(computerChoice == "rock") {
+        paragraph.textContent = "win";
+    } else if(computerChoice == "scissors") {
+        paragraph.textContent = "lose";
+    } else {
+        paragraph.textContent = "tie";
+    }
+})
+
+scissors.addEventListener("click", () => {
+    if(computerChoice == "paper") {
+        paragraph.textContent = "win";
+    } else if(computerChoice == "rock") {
+        paragraph.textContent = "lose";
+    } else {
+        paragraph.textContent = "tie";
+    }
+})
